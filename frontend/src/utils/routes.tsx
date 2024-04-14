@@ -1,6 +1,8 @@
 import LoginForm from "@/pages/Login";
 import SignupForm from "@/pages/Signup";
+import Conversation from "@/pages/Conversation";
 import { RouteObject } from "react-router-dom";
+
 import { ProtectedRoutes, PublicRoutes } from "@/components/Hoc/Routing";
 
 export const routes: RouteObject[] = [
@@ -22,6 +24,7 @@ export const routes: RouteObject[] = [
     children: [
       {
         path: "/",
+        element: <Conversation />,
       },
     ],
   },

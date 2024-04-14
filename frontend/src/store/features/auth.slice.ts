@@ -21,7 +21,7 @@ const initialState: State = {
   lastName: "",
   email: "",
   isLoading: false,
-  isLoggedIn: false,
+  isLoggedIn: true,
 };
 
 const { reducer, name } = createSlice({

@@ -8,6 +8,6 @@ const PublicRoutes = () => {
 
 const ProtectedRoutes = () => {
   const { isLoggedIn } = useAppSelector((state) => state.auth);
-  return isLoggedIn ? <Outlet /> : <Navigate to={"/login"} />;
+  return !isLoggedIn ? <Outlet /> : <Navigate to={"/login"} />;
 };
 export { PublicRoutes, ProtectedRoutes };
