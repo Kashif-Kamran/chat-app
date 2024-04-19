@@ -11,7 +11,7 @@ async function saveMessage(messageDto: MessageDto) {
     ...messageDto,
   });
 
-  return sanatized(messageCreationResponse);
+  return messageCreationResponse;
 }
 
 export default {

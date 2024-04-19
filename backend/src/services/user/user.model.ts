@@ -2,8 +2,7 @@ import { getModelForClass, prop } from "@typegoose/typegoose";
 import { Schema } from "mongoose";
 
 class User {
-  @prop({ type: Schema.Types.ObjectId, auto: true })
-  _id!: string;
+  @prop({ type: Schema.Types.ObjectId, auto: true }) _id!: string;
   @prop()
   firstName!: string;
   @prop()
