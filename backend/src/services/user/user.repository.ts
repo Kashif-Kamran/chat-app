@@ -18,7 +18,13 @@ async function findUserByEmail(email: string) {
   return userByEmail ? sanitize(userByEmail) : null;
 }
 
+async function findUserById(userId: string) {
+  const userById = await UserModel.findOne({ _id: userId });
+  return userById ? sanitize(userById) : null;
+}
+
 export default {
   save,
   findUserByEmail,
+  findUserById,
 };
