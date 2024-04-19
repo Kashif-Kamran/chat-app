@@ -3,7 +3,9 @@ import AsyncHandler from "../../core/AsyncHandler";
 import { SuccessfullyCreatedResponse } from "../../core/ApiResponse";
 import UserDto from "../user/interfaces/User.Dto";
 import userController from "../user/user.controller";
-import validator, { ValidationSource } from "../../middlewares/validator";
+import validator, {
+  ValidationSource,
+} from "../../middlewares/request.validator";
 import schema from "./schema";
 const router = Router();
 

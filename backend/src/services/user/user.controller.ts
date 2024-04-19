@@ -1,4 +1,8 @@
-import { AuthFailureError, BadRequestError } from "../../core/ApiError";
+import {
+  AuthFailureError,
+  BadRequestError,
+  NotFoundError,
+} from "../../core/ApiError";
 import UserDto from "./interfaces/User.Dto";
 import UserRepository from "./user.repository";
 import bcrypt from "bcrypt";
@@ -31,4 +35,11 @@ async function authenticateUser(email: string, password: string) {
     token: token,
   };
 }
-export default { createUser, authenticateUser };
+
+async function getUserById(userId: string | undefined) {
+  if (!userId) throw new NotFoundError("User Not Found");
+  const user = await UserRepository.findUserById(userId);
+  if (!user) throw new NotFoundError("User not found");
+  return user;
+}
+export default { createUser, authenticateUser, getUserById };

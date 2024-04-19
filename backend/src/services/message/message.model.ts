@@ -14,5 +14,4 @@ class Message {
 const MessageModel = getModelForClass(Message, {
   schemaOptions: { timestamps: true },
 });
-
 export { MessageModel, Message };

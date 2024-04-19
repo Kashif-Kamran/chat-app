@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { JoiAuthBearer } from "../../middlewares/validator";
+import { JoiAuthBearer } from "../../middlewares/request.validator";
 
 export default {
   register: Joi.object().keys({
